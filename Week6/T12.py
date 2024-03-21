@@ -1,8 +1,8 @@
 def tulosta_inventaario(esineet=""):  
     if not esineet:
-        print("Sinulla ei ole esineitä")
+        print("Sinulla ei ole mukana mitään.")
         return esineet
-    
+    print("Sinulla on mukana: ")
     for item in esineet:
         print("- "+ item.capitalize())
 
