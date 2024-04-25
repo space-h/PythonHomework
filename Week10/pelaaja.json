@@ -1,0 +1,13 @@
+{
+    "playerInfo": [
+        {
+            "pelaaja": "J",
+            "pisteet": 10,
+            "esineet": [
+                "piano",
+                "rumpu",
+                "kukka"
+            ]
+        }
+    ]
+}
