@@ -19,6 +19,17 @@ def quitter(info):
         time.sleep(2)
         sys.exit()
 
+def restart(info):
+        noYes = input("Are you sure you want to restart, y/n?\n")
+        if noYes in {"yes", "y"}:
+            print("\nRestarting the game")
+            time.sleep(2)
+            info["Health"] = 0
+            return info
+        else:
+            print("Returning to game\n")
+            return info
+
 
 def playerStats(info):
     print("\nPLAYERINFO:")
@@ -41,12 +52,11 @@ def startingInventory(info):
 def apples(info):
     if info["Health"] <= 94:
         info["Health"] = info["Health"] + 5
-        if info["Points"] <=20:
-            info["Points"] += 2
         print("\nYou are healed")
         time.sleep(1)
         print(info["Health"], "/ 100")
         return info
+    
     elif info["Health"] == 100:
         print("\nYou are fully healed")
         print(info["Health"], "/ 100")
@@ -55,23 +65,24 @@ def apples(info):
     
     elif info["Health"] >= 95:
         info["Health"] = 100
-        if info["Points"] <=20:
-            info["Points"] += 2
         print("\nYou are healed")
         time.sleep(1)
         print(info["Health"], "/ 100")
         return info
 
-    if info["Health"] == 100:
-        print("\nYou are fully healed")        
-        return info
 
 def bag():
     print("Bag is full of appels, they look tasty and will help with both thirst and hunger")
-    print('To consume the apples, write "eat"')
+    print('To consume the apples, input "eat"')
 
 def hint():
     print("It is usually good idea to LOOK around and to use the INFO you have been given")
+    helpNoYes = input("Would you like additional assitance?\n")
+    if helpNoYes in {"yes", "y"}:
+        print('The goal of the game is to find the \nitems using the "Look" command when in a location')
+        print("You need some amount of items that will \nhelp you before you can attempt to be rescued")
+    else:
+        return    
 
 def nameLegalCheck(legalCommands):
     noGoNames = legalCommands

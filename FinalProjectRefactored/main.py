@@ -16,12 +16,12 @@ while info["Health"] == 0:
         info["Points"] = 0
 
 
-        legalCommands = ["yes", "no", "y", "n", "look", "info", "hint", "help", "help me", "open bag", "bag", "backbag", "search bag", "search", "row north", "row east", "row west", "row south", "eat", "quit"]
+        legalCommands = ["yes", "no", "restart", "y", "n", "look", "info", "hint", "help", "help me", "burlap sack", "sack", "look around", "seek", "bag", "backbag", "search bag", "search", "row north", "row east", "row west", "row south", "eat", "quit"]
 
         info["Name"] = util.nameLegalCheck(legalCommands)
 
 
-        print(f"\n\nHello {info["Name"]}, nice to meet you. You have gained 10 points.")
+        print(f"\n\nHello {info["Name"]}, nice to meet you.")
         print("Type 'info' to see your player info in the future")
         print('Type "quit" to end the game. You will see your player info and the game will end\n')
         info["Points"] = info["Points"] + 10
@@ -44,7 +44,7 @@ while info["Health"] == 0:
                  
 
             if command not in legalCommands:
-                print(f'Unclear input " {command} ", please try again\n')
+                print(f'Unclear input "{command}", please try again\n')
                 continue
 
 
