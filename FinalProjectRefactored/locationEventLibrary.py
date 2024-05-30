@@ -18,59 +18,59 @@ def locationStoryPoints(info):
         
     if info["EastWest"] == 0 and info["NorthSouth"] == -1:
         if not "Superpaddler" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You see something in the water, better take a look")
         return
     
     if info["EastWest"] == 1 and info["NorthSouth"] == 1:
         if not "Map of ship routes" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You see something in the water, you might want to take a look")
         return
     
     if info["EastWest"] == 2 and info["NorthSouth"] == 2:
         if not "A DVD box of Monty Python" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You maybe see something in the water")
         return
     
     if info["EastWest"] == -1 and info["NorthSouth"] == 0:
         if not "Rudder" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("Something floating on the water")
         return
 
     if info["EastWest"] == -1 and info["NorthSouth"] == 1:
         if not "Lifejacket" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("Something climmers on the sea")
         return
     
     if info["EastWest"] == -2 and info["NorthSouth"] == 0:
         if not "Jellyfish" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You see something in the water, better take a look")
         return 
     
 
     if info["EastWest"] == -2 and info["NorthSouth"] == 1:
         if not "A captain's hat" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You maybe see something in the water")
         return
 
     if info["EastWest"] == 2 and info["NorthSouth"] == -1:
         if not "Shortwave radio" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You see something in the water, you might want to take a look")
         return
 
     if info["EastWest"] == 1 and info["NorthSouth"] == -1:
         if not "Shortwave radio battery" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You maybe see something in the water")
         return  
 
     if info["EastWest"] == 2 and info["NorthSouth"] == -2:
         if not "Whistle" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You maybe see something in the water")
         return
     
 
     if info["EastWest"] == -1 and info["NorthSouth"] == -1:
         if not "Signal Flare" in info["Inventory"]:
-            print("You see something in the water, better take a LOOK")
+            print("You see something in the water, better take a look")
         return
 
     if info["NorthSouth"] >= 3:
@@ -124,8 +124,7 @@ def ship(info):
                 print("With your dilligent effort and determination") 
                 print("you can trade your found items for safe passage home")
                 print("Especially the DVD box of monty python is a great hit among the shit crew")
-                print(f'And with your title of {info["Name"]}, you are well respected among the crew')
-                print("Congratulation on finding all the items")
+                print(f'Congratulation on finding all the items, {info["Name"]}')
                 
             time.sleep(1)
             print("Exiting the game")
@@ -147,6 +146,8 @@ def storm(info):
 def easternSun(info):
     print("The rays of the sun burns you particularly painfully (-5 hp)")
     info["Health"] = info["Health"] - 5
+    if info["Health"] < 1:
+        print("Your health has reached 0, the game is over")
     return info
     
     

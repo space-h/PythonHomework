@@ -102,6 +102,7 @@ def EW2SN9(info):
                 info["Inventory"].append("Shortwave radio")
                 info["Points"] =  info["Points"] + 5
                 print("The battery seems dead, but otherwise it's alright\n")
+                print('To use the radio, input "radio"')
                 return info
         else:
             return info
