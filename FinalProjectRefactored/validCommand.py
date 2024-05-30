@@ -30,7 +30,7 @@ def allCommands(command, info):
         allowedActions.apples(info)
         return info      
     
-    if command in {"look around", "look", "seek", "search"} and info["Inventory"] == "":
+    if command in {"look around", "look", "seek"} and info["Inventory"] == "":
         print("You find a Compass, a Paddle and a Burlap Sack.")
         info = util.startingInventory(info)   
         print('To use the paddle, type "row" and the direction you wish to go. \nFor example "row east"')
